@@ -69,10 +69,9 @@ const Login = () => {
         .catch((err) => {
           setFormData({
             ...formData,
-            errorMsg: 'Credential Not Match',
+            errorMsg: err.response.data.errorMessage,
             loading: false,
           });
-          console.log('Sign in Api Function Error >>>>', err);
         });
     }
   };

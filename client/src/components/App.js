@@ -7,6 +7,8 @@ import Login from './Login';
 import SignUp from './Signup';
 import AdminDashboard from './Dashboard/admin';
 import userDashboard from './Dashboard/user';
+import AdminRoute from './Route/AdminRoute';
+import UserRoute from './Route/UserRoute';
 const App = () => (
   <>
     <Header />
@@ -15,8 +17,8 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/admin/dashboard' component={AdminDashboard} />
-        <Route exact path='/user/dashboard' component={userDashboard} />
+        <AdminRoute exact path='/admin/dashboard' component={AdminDashboard} />
+        <UserRoute exact path='/user/dashboard' component={userDashboard} />
         <Route component={NotFound} />
       </Switch>
     </main>
