@@ -5,7 +5,6 @@ const { jwtSecret, jwtExpire } = require('../config/keys');
 
 exports.signupController = async (req, res, next) => {
   const { username, email, password } = req.body;
-
   try {
     const user = await User.findOne({ email });
     if (user) {
